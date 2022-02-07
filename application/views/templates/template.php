@@ -83,7 +83,7 @@
 
                                     <p>
                                         <?= $this->fungsi->user_login()->name ?>
-                                        <small>Web Developer</small>
+                                        <small>Admin</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -262,17 +262,12 @@
                     <?php endif ?>
 
                     <li class="header">SETTING</li>
-                    <?php if ($this->fungsi->user_login()->id_role == 6 || $this->fungsi->user_login()->id_role == 2) : ?>
+                    <?php if ($this->fungsi->user_login()->id_role == 2) : ?>
                         <li <?= $this->uri->segment(1) == 'user'  ? 'class="active"' : ''; ?>>
-                            <a href="<?= base_url(''); ?>">
+                            <a href="<?= base_url('user'); ?>">
                                 <i class="fa fa-users"></i> <span>User</span>
                             </a>
                         </li>
-                        <!-- <li <?= $this->uri->segment(1) == 'site'  ? 'class="active"' : ''; ?>>
-                            <a href="<?= base_url(''); ?>">
-                                <i class="fa fa-building-o"></i> <span>Sites</span>
-                            </a>
-                        </li> -->
                     <?php endif ?>
                     <li>
                         <a href="<?= base_url('auth/logout'); ?>">
