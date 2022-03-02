@@ -235,7 +235,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 
 //Close and output PDF document
 ob_clean();
-$pdf->Output('ActivityReport_' . $date . '_' . $site['site'] . '.pdf', 'I');
+$pdf->Output('ActivityReport_' . $date . '_' . $site['site'] . '.pdf', 'D');
 
 //============================================================+
 // END OF FILE
