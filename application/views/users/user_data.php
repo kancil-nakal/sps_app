@@ -50,7 +50,7 @@
                                         <?php elseif ($user['id_role'] == 4) : ?>
                                             <td class="text-center"><span class="label bg-teal">Client</span></td>
                                         <?php endif ?>
-                                        <td><?= $user['site']; ?></td>
+                                        <td class="text-center"><?= $user['site'] == null ? 'ALL' : $user['site']; ?></td>
                                         <td class="text-center">
                                             <form action="<?= base_url('user/delete'); ?>" method="post">
                                                 <a href="<?= base_url('user/edit/') . $user['id']; ?>" class="label label-warning"><i class="fa fa-cog"></i> Update</a>

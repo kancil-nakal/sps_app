@@ -26,7 +26,7 @@
                                 <label for="site">Site *</label>
                                 <div class="form-group input-group <?= form_error('site') ? 'has-error' : ''; ?>">
                                     <input type="hidden" class="form-control" id="site_id" name="site_id" required>
-                                    <input type="text" class="form-control" id="site" name="site" required>
+                                    <input type="text" class="form-control" id="site" name="site" autocomplete="off" required>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#modal-site">
                                             <i class="fa fa-search"></i>

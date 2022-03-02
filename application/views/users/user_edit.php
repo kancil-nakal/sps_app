@@ -34,11 +34,11 @@
                                     <input type="text" class="form-control" value="<?= $user['email']; ?>" id="email" name="email" readonly>
                                 </div>
                                 <div class="form-group <?= form_error('password1') ? 'has-error' : ''; ?>">
-                                    <label for="password1">Password * </label>
+                                    <label for="password1">Reset Password * </label>
                                     <input type="password" class="form-control" value="" id="password1" name="password1">
                                 </div>
                                 <div class="form-group <?= form_error('password2') ? 'has-error' : ''; ?>">
-                                    <label for="password2">Confirm Password * </label>
+                                    <label for="password2">Reset Confirm Password * </label>
                                     <input type="password" class="form-control" value="" id="password2" name="password2">
                                 </div>
 

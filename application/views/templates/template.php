@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini fixed">
+<body class="hold-transition skin-yellow sidebar-mini fixed">
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -380,6 +380,8 @@
 
         // Date range picker
         // $('#reservation').daterangepicker()
+        //Date range picker
+        // $('#reservation').daterangepicker()
         $(function() {
 
             $('#reservation').daterangepicker({
@@ -390,7 +392,7 @@
             });
 
             $('#reservation').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+                $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
             });
 
             $('#reservation').on('cancel.daterangepicker', function(ev, picker) {
