@@ -56,7 +56,7 @@ class User extends CI_Controller
 
     public function edit($id)
     {
-        $query = "select *,s.site from admin_users au, sites s where au.id_site = s.site_id and au.id =$id ";
+        $query = "select *,s.site from admin_users au left join sites s on au.id_site = s.site_id  where  au.id =$id ";
         $data = [
             'title' => 'Update Users',
             'sites' => $this->M_site->getSite(),
