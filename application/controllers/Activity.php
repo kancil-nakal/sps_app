@@ -38,6 +38,7 @@ class Activity extends CI_Controller
     {
         $site_id = $this->input->post('site_id', true);
         $date = $this->input->post('date', true);
+
         $danru = $this->db->query("select * from employees e WHERE id_site = $site_id and id_position = 2 and not nik = 2134;")->result_array();
         $activity = $this->db->query("select *, ga.date_time as jam FROM gms_activities ga, employees e WHERE ga.nik =e.nik and e.id_site = $site_id and date(ga.date_time) = '$date' ;")->result_array();
         $attendance = $this->db->query("select gna.attid ,e.name, p.`position` , gas.keterangan , gna.hours FROM gms_new_attendances gna, employees e,positions p ,gms_attendance_status gas WHERE gna.nik =e.nik and gna.att_status = gas.id and e.id_position =p.position_id and gna.id_site = $site_id and date(gna.currentdatetime) = '$date' ;")->result_array();

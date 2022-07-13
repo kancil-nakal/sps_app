@@ -154,49 +154,6 @@ foreach ($activities as $activity) {
     ';
 }
 
-$html .=    '
-        </table>
-    <br>
-    <table border="0" cellspacing="0" cellpadding="3">
-            <tbody>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td style="font-weight:bold">2.	Laporan Abesensi </td>
-                </tr>
-            </tbody>
-		</table>
-        <table border="1" cellspacing="0" cellpadding="3" width="100%">
-            <thead>
-                <tr>
-                    <th style="width:30px;text-align:center;font-weight:bold">NO</th>
-                    <th style="width:200px;text-align:center;font-weight:bold">PETUGAS</th>
-                    <th style="width:150px;text-align:center;font-weight:bold">POSISI</th>
-                    <th style="width:160px;text-align:center;font-weight:bold">KEHADIRAN</th>
-                    <th style="width:100px;text-align:center;font-weight:bold">NOTE</th>
-                </tr>
-            </thead>';
-$n = 1;
-foreach ($attendance as $att) {
-    $html .= '
-            <tbody>
-            <tr>
-                <td style="width:30px;text-align:center;">' .  $n++ . '</td>
-                <td  style="width:200px;">' . $att['name'] . '</td> 
-                <td  style="width:150px;">' . $att['position'] . '</td>
-                <td  style="width:160px;">' . $att['keterangan'] . '</td>';
-    if ($att['hours'] != 0) {
-        $html .= '<td  style="width:100px;">' . $att['hours'] . ' Jam' . '</td>';
-    } else {
-        $html .= '<td  style="width:100px;"></td>';
-    }
-
-    $html .= '
-           </tr>
-        <tbody>';
-}
-
 
 $html .=    '
         </table>

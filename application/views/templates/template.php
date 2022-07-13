@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GMS | <?= $title; ?></title>
+    <title>SPS | <?= $title; ?></title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -52,9 +52,9 @@
             <!-- Logo -->
             <a href="<?= base_url('dashboard') ?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>G</b>MS</span>
+                <span class="logo-mini"><b>S</b>PS</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>GMS</b></span>
+                <span class="logo-lg"><b>SPS</b></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -150,23 +150,9 @@
                             </span>
                         </a>
                     </li>
-                    <li <?= $this->uri->segment(1) == 'attendance'  ? 'class="active"' : ''; ?>>
-                        <a href="<?= base_url('attendance') ?>">
-                            <i class="fa fa-check"></i> <span>Attendance</span>
-                            <span class="pull-right-container">
-                            </span>
-                        </a>
-                    </li>
                     <li <?= $this->uri->segment(1) == 'activity'  ? 'class="active"' : ''; ?>>
                         <a href="<?= base_url('activity') ?>">
                             <i class="fa fa-calendar-check-o"></i> <span>Aktivities</span>
-                            <span class="pull-right-container">
-                            </span>
-                        </a>
-                    </li>
-                    <li <?= $this->uri->segment(1) == 'incident'  ? 'class="active"' : ''; ?>>
-                        <a href="<?= base_url('incident') ?>">
-                            <i class="fa fa-warning "></i> <span>Incident</span>
                             <span class="pull-right-container">
                             </span>
                         </a>
@@ -179,21 +165,8 @@
                         </a>
                     </li>
 
-                    <!-- <li class="header">TOOLS</li> -->
-                    <!-- <li <?= $this->uri->segment(1) == 'report_incident'  ? 'class="active"' : ''; ?>>
-                        <a href="<?= base_url('report_incident'); ?>">
-                            <i class="fa fa-exclamation-circle"></i> <span>Laporkan Kejadian</span>
-                        </a>
-                    </li> -->
-                    <?php if ($this->fungsi->user_login()->id_role == 6 || $this->fungsi->user_login()->id_role == 2 || $this->fungsi->user_login()->id_role == 7) : ?>
-                        <li <?= $this->uri->segment(1) == 'message'  ? 'class="active"' : ''; ?>>
-                            <a href="<?= base_url('message'); ?>">
-                                <i class="fa fa-envelope-square"></i> <span>Message</span>
-                            </a>
-                        </li>
-                    <?php endif ?>
 
-                    <?php if ($this->fungsi->user_login()->id_role == 6 || $this->fungsi->user_login()->id_role == 2 || $this->fungsi->user_login()->id_role == 7 || $this->fungsi->user_login()->id_role == 8) : ?>
+                    <?php if ($this->fungsi->user_login()->id_role == 6 || $this->fungsi->user_login()->id_role == 2 || $this->fungsi->user_login()->id_role == 7 || $this->fungsi->user_login()->id_role == 4) : ?>
                         <li class="header">MANAGE</li>
                         <li class="treeview <?= $this->uri->segment(1) == 'report' ? 'active' : ''; ?>">
                             <a href="#">
@@ -214,18 +187,6 @@
                                         <i class="fa fa-circle-o"></i> <span>Activity Report</span>
                                     </a>
                                 </li>
-                                <li <?= $this->uri->segment(1) == 'report' && $this->uri->segment(2) == 'incident' ? 'class="active"' : ''; ?>>
-                                    <a href="<?= base_url('report/incident'); ?>">
-                                        <i class="fa fa-circle-o"></i> <span>Incident Report</span>
-                                    </a>
-                                </li>
-                                <?php if ($this->fungsi->user_login()->id_role == 6 || $this->fungsi->user_login()->id_role == 2 || $this->fungsi->user_login()->id_role == 7) : ?>
-                                    <li <?= $this->uri->segment(1) == 'report' && $this->uri->segment(2) == 'attendance' ? 'class="active"' : ''; ?>>
-                                        <a href="<?= base_url('report/attendance'); ?>">
-                                            <i class="fa fa-circle-o"></i> <span>Attendance Report</span>
-                                        </a>
-                                    </li>
-                                <?php endif ?>
                             </ul>
                         </li>
                     <?php endif ?>
